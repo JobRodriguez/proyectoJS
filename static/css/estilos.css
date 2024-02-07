@@ -4,6 +4,14 @@
     height: 100vh;
 
 }
+.box {
+    width: 80%; /* Ancho del contenedor */
+    margin: 50px auto; /* Margen superior e inferior, centrado horizontalmente */
+    padding: 20px; /* Espacio interno */
+    background-color: #ffffff; /* Color del contenedor */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Sombra */
+  }
 .logo{
 	height: 15h;
 	width: 10vh;
