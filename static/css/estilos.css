@@ -38,7 +38,7 @@ li{
 }
 .inicio{
     margin-top: 5vh;
-    background-color: gray;
-    opacity: 90%;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    opacity: 70%;
+    color: rgb(0, 0, 0);
 }

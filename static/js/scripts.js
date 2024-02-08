@@ -1,35 +1,40 @@
+
 let buscador = document.getElementById("search");
 buscador.addEventListener("keyup", function () {
   let cont = 0;
+  let searchTerm = new RegExp(buscador.value, 'gi'); // búsqueda insensible a mayúsculas y minúsculas
   Array.from(document.getElementsByTagName("p")).forEach(elemen => {
-    const htmlOriginal = elemen.innerText;
-    if (elemen.innerText.includes(buscador.value) && buscador.value != '') {
-      htmlNuevo = htmlOriginal.replaceAll(buscador.value, '<span style="background-color: yellow;">' + buscador.value + '</span>')
+    const htmlOriginal = elemen.getAttribute("data-original-text") || elemen.innerText;
+
+    if (searchTerm.test(htmlOriginal) && buscador.value !== '') {
+      const htmlNuevo = htmlOriginal.replace(searchTerm, '<span style="background-color: yellow;">$&</span>');
       elemen.innerHTML = htmlNuevo;
       cont = cont + 1;
-    }else{
+    } else {
       elemen.innerHTML = elemen.textContent;
 
     }
   })
   Array.from(document.getElementsByTagName("h5")).forEach(elemen => {
-    const htmlOriginal = elemen.innerText;
-    if (elemen.innerText.includes(buscador.value) && buscador.value != '') {
-      htmlNuevo = htmlOriginal.replaceAll(buscador.value, '<span style="background-color: yellow;">' + buscador.value + '</span>')
+    const htmlOriginal = elemen.getAttribute("data-original-text") || elemen.innerText;
+
+    if (searchTerm.test(htmlOriginal) && buscador.value !== '') {
+      const htmlNuevo = htmlOriginal.replace(searchTerm, '<span style="background-color: yellow;">$&</span>');
       elemen.innerHTML = htmlNuevo;
       cont = cont + 1;
-    }else{
+    } else {
       elemen.innerHTML = elemen.textContent;
 
     }
   })
   Array.from(document.getElementsByTagName("li")).forEach(elemen => {
-    const htmlOriginal = elemen.innerText;
-    if (elemen.innerText.includes(buscador.value) && buscador.value != '') {
-      htmlNuevo = htmlOriginal.replaceAll(buscador.value, '<span style="background-color: yellow;">' + buscador.value + '</span>')
+    const htmlOriginal = elemen.getAttribute("data-original-text") || elemen.innerText;
+
+    if (searchTerm.test(htmlOriginal) && buscador.value !== '') {
+      const htmlNuevo = htmlOriginal.replace(searchTerm, '<span style="background-color: yellow;">$&</span>');
       elemen.innerHTML = htmlNuevo;
       cont = cont + 1;
-    }else{
+    } else {
       elemen.innerHTML = elemen.textContent;
 
     }
